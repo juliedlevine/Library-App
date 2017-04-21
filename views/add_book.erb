@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<h3>Add a new book</h3>
+
+<form action="/save_book" method="post">
+
+    <div class="form-group">
+        <label for="name">Book Title:</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
+
+
+    <div class="form-group">
+        <label for="author">Author:</label>
+        <input class="form-control" id="author" name="author">
+    </div>
+
+    <div class="form-group">
+        <label for="content">Description or Review:</label>
+        <textarea class="form-control" id="content" rows="3" name="content"></textarea>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+</form>

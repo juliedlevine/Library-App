@@ -1,0 +1,8 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.main {
+    max-width: 600px;
+    margin: 0 auto;
+}
