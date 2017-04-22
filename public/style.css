@@ -32,3 +32,8 @@ body {
 .buttons {
     display: inline-block;
 }
+.cover {
+    display: block;
+    margin-top: 53px;
+    margin-bottom: -19px;
+}
