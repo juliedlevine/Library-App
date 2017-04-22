@@ -4,7 +4,7 @@
 <br>
 <% @output.each do |book| %>
     <img class="cover" src="http://covers.librarything.com/devkey/c1fb82c39ddb73064b12f485ed423425
-/medium/isbn/0141043768">
+/medium/isbn/<%= book["isbn"] %>">
     <h4 class="book_title"><%= book["title"] %> </h4>
     <p>Author: <%= book["author"] %> </p>
     <p>Description/Review: <%= book["description"] %> </p>

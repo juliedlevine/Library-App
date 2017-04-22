@@ -9,9 +9,14 @@ require 'rexml/document'
 
 def get_isbn(title)
     access_key = '6Z7QHG8S'
-    url = "http://isbndb.com/api/books.xml?access_key=" + access_key + "&index1=title&value1=" + CGI::escape(title)
-    xml = REXML::Document.new(open(url).read)
-    puts "ISBN: " + xml.elements["ISBNdb/BookList/BookData"].attributes["isbn"]
+    while (title)
+      title.chomp!
+      url = "http://isbndb.com/api/books.xml?access_key=" + access_key + "&index1=title&value1=" + CGI::escape(title)
+      xml = REXML::Document.new(open(url).read)
+      if (xml.elements["ISBNdb/BookList/BookData"])
+        return xml.elements["ISBNdb/BookList/BookData"].attributes["isbn"]
+      end
+    end
 end
 
 
@@ -51,8 +56,9 @@ post("/save_book") do
     @title = params[:title]
     @author = params[:author]
     @description = params[:description]
+    @isbn = get_isbn(@title)
     conn = PG.connect( dbname: 'library' )
-    conn.exec( "insert into books values (default, $1, $2, $3)", [@title, @author, @description] )
+    conn.exec( "insert into books values (default, $1, $2, $3, $4)", [@title, @author, @description, @isbn] )
     redirect ("/")
 end
 
