@@ -1,14 +1,19 @@
+
 <h3>Welcome! Here are all my books.</h3>
+<a href="/add_book"><button type="submit"class="btn btn-primary">Add New</button></a>
 <br>
 <% @output.each do |book| %>
-    <h4>
-        <%= book["title"] %> </h4>
+    <h4 class="book_title"><%= book["title"] %> </h4>
     <p>Author: <%= book["author"] %> </p>
     <p>Description/Review: <%= book["description"] %> </p>
-    <br>
+
+    <form action="/update/<%=book["title"]%>/<%=book["author"]%>/<%=book["description"]%>" method="post" class="buttons">
+        <input type="submit" name="update" value="Edit" class="btn btn-primary">
+    </form>
+
+
+    <form action="/delete/<%= book["title"] %>" method="post" class="buttons">
+        <input type="submit" name="delete" value="Delete" class="btn btn-primary">
+    </form>
+
 <% end %>
-
-
-<br>
-<p>Add a new Book?</p>
-<a href="/add_book"><button type="submit"class="btn btn-primary">Click Here</button></a>
