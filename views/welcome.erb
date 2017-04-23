@@ -1,10 +1,9 @@
 
-<h3>Welcome! Here are all my books.</h3>
+<h3>Welcome! Here are some of my favorite books.</h3>
 <a href="/add_book"><button type="submit"class="btn btn-primary">Add New</button></a>
 <br>
 <% @output.each do |book| %>
-    <img class="cover" src="http://covers.librarything.com/devkey/c1fb82c39ddb73064b12f485ed423425
-/medium/isbn/<%= book["isbn"] %>">
+    <img class="cover" src="<%= book["cover"] %>">
     <h4 class="book_title"><%= book["title"] %> </h4>
     <p>Author: <%= book["author"] %> </p>
     <p>Description/Review: <%= book["description"] %> </p>

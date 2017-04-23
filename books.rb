@@ -56,10 +56,11 @@ post("/save_book") do
     @title = params[:title]
     @author = params[:author]
     @description = params[:description]
-    @isbn = get_isbn(@title)
+    @cover = params[:cover]
     conn = PG.connect( dbname: 'library' )
-    conn.exec( "insert into books values (default, $1, $2, $3, $4)", [@title, @author, @description, @isbn] )
-    redirect ("/")
+    conn.exec( "insert into books values (default, $1, $2, $3, $4)", [@title, @author, @description, @cover] )
+    response = "saved"
+    # redirect ("/")
 end
 
 # Update book form submission
