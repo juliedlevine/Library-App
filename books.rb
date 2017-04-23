@@ -22,7 +22,7 @@ end
 
 def book_data()
     conn = PG.connect( dbname: 'library' )
-    conn.exec( "SELECT * FROM books" ) do |result|
+    conn.exec( "SELECT * FROM books order by title" ) do |result|
         books_array = []
         result.each do |row|
             books_array.push(row)

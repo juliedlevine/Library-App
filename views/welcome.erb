@@ -1,20 +1,26 @@
+<p>Welcome to my Personal Library! I created this app to virtually keep track of my Library collection and share my favorite books with friends and family. Click any of the books below to see my review.</p>
 
-<h3>Welcome! Here are some of my favorite books.</h3>
-<a href="/add_book"><button type="submit"class="btn btn-primary">Add New</button></a>
-<br>
+<div class="all_books">
 <% @output.each do |book| %>
-    <img class="cover" src="<%= book["cover"] %>">
-    <h4 class="book_title"><%= book["title"] %> </h4>
-    <p>Author: <%= book["author"] %> </p>
-    <p>Description/Review: <%= book["description"] %> </p>
+    <div class="each_book">
+        <img class="cover" src="<%= book["cover"] %>">
+        <div class="info">
+            <h4 class="book_title"><%= book["title"] %> </h4>
+            <p>Author: <%= book["author"] %> </p>
+            <p>Description/Review: <%= book["description"] %> </p>
 
-    <form action="/update/<%=book["title"]%>/<%=book["author"]%>/<%=book["description"]%>" method="post" class="buttons">
-        <input type="submit" name="update" value="Edit" class="btn btn-primary">
-    </form>
+            <form action="/update/<%=book["title"]%>/<%=book["author"]%>/<%=book["description"]%>" method="post" class="buttons">
+                <input type="submit" name="update" value="Edit" class="btn btn-primary">
+            </form>
 
 
-    <form action="/delete/<%= book["title"] %>" method="post" class="buttons">
-        <input type="submit" name="delete" value="Delete" class="btn btn-primary">
-    </form>
+            <form action="/delete/<%= book["title"] %>" method="post" class="buttons">
+                <input type="submit" name="delete" value="Delete" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
 
 <% end %>
+</div>
+<br>
+<a href="/add_book"><button type="submit"class="btn btn-primary">Add New Book</button></a>

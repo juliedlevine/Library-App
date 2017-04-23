@@ -12,7 +12,7 @@ body {
 
 .main {
     background-color: #393e44;
-    opacity: 0.9;
+    opacity: 0.95;
     width: 90%;
     max-width: 700px;
     margin: 80px auto;
@@ -24,18 +24,45 @@ body {
     margin: 0 auto;
 }
 .header {
+    margin-top: 0;
     text-align: center;
-}
-.book_title {
-    margin-top: 35px;
 }
 .buttons {
     display: inline-block;
 }
-.cover {
-    display: block;
-    margin-top: 53px;
-    margin-bottom: -19px;
-}
 .search_results {
     text-align: center;
+}
+.all_books {
+    text-align: center;
+}
+.each_book {
+    display: inline-block;
+    width: 20%;
+    margin-top: 20px;
+}
+.cover:hover {
+    cursor: pointer;
+}
+.info {
+    display: none;
+}
+
+.show_info {
+    display: block;
+}
+.center {
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .each_book {
+        width: 30%;
+    }
+}
+@media (max-width: 500px) {
+    .each_book {
+        width: 49%;
+    }
+}

@@ -53,4 +53,9 @@ $(document).ready(function() {
         }
     });
 
+    $('.cover').click(function() {
+        $(this).next().toggleClass("show_info");
+        $(this).parent().toggleClass("center");
+    });
+
 });
