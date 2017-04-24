@@ -1,6 +1,6 @@
 # My Library
 ---
-## [Live Site](http://library.juliemdyer.com/)
+<h2><a href="library.juliemdyer.com" target="_blank">Live Site</a></h2>
 
 ## What It Is
 I made this app in Week 11 of DigitalCrafts. Our teacher was unfortunately sick and since he was out we had a week of "self study." I decided to take the latter half of that week to learn Ruby and Sinatra. I was surprised by how quickly I was able to pick it up and how many similarities there were between Ruby/Sinatra and Python/Node.js/Express. That being said, I still faced a number of challenges that come along with building an app in a few days in a brand new language without any outside help.
@@ -9,6 +9,7 @@ I made this app in Week 11 of DigitalCrafts. Our teacher was unfortunately sick 
 ## What I used
 * Ruby
 * Sinatra
+* ERB (Embedded Ruby)
 * ajax
 * PostgreSQL
 * HTML
