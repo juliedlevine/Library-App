@@ -3,7 +3,7 @@ require "json"
 require 'pg'
 set :bind, "0.0.0.0"
 require 'net/http'
-require 'CGI'
+#require 'CGI'
 require 'open-uri'
 require 'rexml/document'
 
