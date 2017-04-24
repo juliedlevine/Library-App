@@ -4,12 +4,14 @@ $(document).ready(function() {
     $("#name").on('keyup', function(event) {
         event.preventDefault();
         var search_term = $("#name").val();
-        var url =
+        var search_url =
         "https://www.goodreads.com/search/index.xml?key=GjaJx7mGjlPyfDWmciekoA&Vary=*&q=" + search_term;
         $.ajax({
             method: 'POST',
-            url: url,
-            dataType: 'xml'
+            url: '/api_call',
+            data: {
+                url: search_url
+            }
         })
         .then(function(data) {
             var search = $(data).find('search').find('results').find('work').find('best_book');

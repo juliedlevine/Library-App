@@ -1,6 +1,7 @@
 require "sinatra"
 require "json"
 require 'pg'
+require 'open-uri'
 set :bind, "0.0.0.0"
 # require 'net/http'
 # require 'CGI'
@@ -41,6 +42,13 @@ end
 # Add Book page
 get("/add_book") do
     erb :add_book
+end
+
+# API call
+post("/api_call") do
+    api_url = request["url"]
+    data = open(api_url)
+    response = data
 end
 
 # Update book page
